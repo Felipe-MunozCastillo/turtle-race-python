@@ -110,6 +110,7 @@ while is_race_on:
             else:
                 winning_color = reverse_colors(winning_color)
                 print(f"¡Perdiste! La tortuga {winning_color} es la ganadora.")
+                break
         else:
             random_distance = random.randint(0, 10)
             turtle.forward(random_distance)
