@@ -1,8 +1,11 @@
+"""Importacion de modulos"""
 from turtle import Turtle, Screen
 import random
 
 
 def define_colors(bet):
+    """Funcion para asignar el color de la tortuga.
+    Se ingresa un string con el nombre del color"""
     if bet == 'roja' or bet == 'rojo':
         bet = "red"
         return bet
@@ -26,7 +29,7 @@ def define_colors(bet):
 
 
 def create_turtles(bet, turtle_colors):
-
+    """Funcion para la creacion de la tortuga escogida por el usuario y competidoras."""
     tim = Turtle(shape="turtle")
     tim.penup()
     tim.color(user_bet)
@@ -40,14 +43,16 @@ def create_turtles(bet, turtle_colors):
 
 
 def create_a_turtle(position_x, position_y, iteration, color):
-    turtle = Turtle(shape="turtle")
-    turtle.color(color)
-    turtle.penup()
-    turtle.goto(position_x, position_y + (iteration + 1) * 50)
-    all_turtles.append(turtle)
+    """Funcion para posicionar a las tortugas en la pantalla."""
+    racer = Turtle(shape="turtle")
+    racer.color(color)
+    racer.penup()
+    racer.goto(position_x, position_y + (iteration + 1) * 50)
+    all_turtles.append(racer)
 
 
 def reverse_colors(bet):
+    """Funcion para traducir el color de la tortuga."""
     if bet == 'red':
         bet = "roja"
         return bet
@@ -81,7 +86,7 @@ user_bet = define_colors(user_bet)
 
 while not user_bet:
     user_bet = screen.textinput(title="Has tu apuesta",
-                                prompt="Lo siento, no tenemos de esas. escoge otro color: ").lower()
+                                prompt="Lo siento, no tenemos de ese color. Escoge otro: ").lower()
     user_bet = define_colors(user_bet)
 
 colors = ["red", "orange", "yellow", "green", "blue", "purple"]
